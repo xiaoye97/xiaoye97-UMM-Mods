@@ -1,4 +1,5 @@
-﻿using Harmony12;
+﻿//#define Chinese
+using Harmony12;
 using UnityEngine;
 using Coatsink.Common;
 using System.Reflection;
@@ -20,9 +21,15 @@ namespace me.xiaoye97.UMMMod.KingdomTwoCrowns.CanDestroyWall
 
         public static void OnGUI(UnityModManager.ModEntry modEntry)
         {
+#if Chinese
             GUILayout.BeginVertical("可以拆除墙", GUI.skin.window, new GUILayoutOption[0]);
             GUILayout.Label("站在墙的中间，按C键，可以消耗1金币拆除当前墙壁。", new GUILayoutOption[0]);
             GUILayout.Label("作者:xiaoye97 QQ:1066666683", new GUILayoutOption[0]);
+#else
+            GUILayout.BeginVertical("CanDestroyWall", GUI.skin.window, new GUILayoutOption[0]);
+            GUILayout.Label("Standing in the middle of the wall, press the C key, you can use 1 coin to destroy the current wall.", new GUILayoutOption[0]);
+            GUILayout.Label("Author:xiaoye97 QQ:1066666683 Discord:xiaoye#3171", new GUILayoutOption[0]);
+#endif
             GUILayout.EndVertical();
         }
 
